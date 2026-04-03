@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arena LSF pédagogique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="layout">
+    <section class="left-panel card">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">Séance en direct</p>
+          <h1>Apprentissage de la LSF</h1>
+        </div>
+        <p class="hint">Signer « bonjour » ou « non » avec un mouvement complet et lisible.</p>
+      </header>
+      <div class="video-wrap">
+        <img id="video-feed" src="/video_feed" alt="Flux vidéo de la caméra en direct" />
+      </div>
+      <p id="status" class="status">Démarrage de la caméra...</p>
+    </section>
+
+    <aside class="right-panel">
+      <div class="card metric target">
+        <p class="label">Signe cible</p>
+        <p id="target" class="value accent">-</p>
+      </div>
+
+      <div class="card metric score">
+        <p class="label">Score</p>
+        <p id="score" class="value">0</p>
+      </div>
+
+      <div class="card metric detection">
+        <p class="label">Détecté</p>
+        <p id="prediction" class="sub">-</p>
+        <p id="last-detected" class="tiny">Dernier : -</p>
+      </div>
+
+      <div class="card metric bars">
+        <p class="label">Confiance du mouvement</p>
+        <div class="bar">
+          <div id="history-bar" class="fill fill-cyan"></div>
+        </div>
+        <p class="label small">Temps avant nouvelle analyse</p>
+        <div class="bar">
+          <div id="pause-bar" class="fill fill-gold"></div>
+        </div>
+      </div>
+
+      <div class="card feedback-box">
+        <p id="feedback" class="feedback"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
